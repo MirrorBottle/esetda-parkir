@@ -4,8 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EmployeeResource\Pages;
 use App\Filament\Resources\EmployeeResource\RelationManagers;
+use App\Models\Biro;
 use App\Models\Employee;
+use Filament\Actions\Action;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -17,22 +20,39 @@ class EmployeeResource extends Resource
 {
     protected static ?string $model = Employee::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $label = 'Pegawai';
+    public static ?string $pluralModelLabel = 'Pegawai';
+
+    /**
+     * Get the navigation badge for the resource.
+     */
+    public static function getNavigationBadge(): ?string
+    {
+        return number_format(static::getModel()::count());
+    }
 
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(2)
             ->schema([
-                Forms\Components\TextInput::make('biro_id')
-                    ->required()
-                    ->numeric(),
+                Select::make('biro_id')
+                    ->label('Biro')
+                    ->options(Biro::all()->pluck('name', 'id'))
+                    ->searchable()
+                    ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->label("Nama")
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('position')
+                    ->label("Jabatan")
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone_number')
+                    ->label("Nomor Telepon")
                     ->tel()
                     ->required()
                     ->maxLength(255),
@@ -43,8 +63,8 @@ class EmployeeResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('biro_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('biro.name')
+                    ->badge()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
@@ -52,14 +72,6 @@ class EmployeeResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone_number')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
