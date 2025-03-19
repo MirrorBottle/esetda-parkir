@@ -21,6 +21,8 @@ class EmployeeResource extends Resource
     protected static ?string $model = Employee::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?int $navigationSort = -2;
+
 
     protected static ?string $label = 'Pegawai';
     public static ?string $pluralModelLabel = 'Pegawai';
@@ -77,6 +79,7 @@ class EmployeeResource extends Resource
                 //
             ])
             ->actions([
+                
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
