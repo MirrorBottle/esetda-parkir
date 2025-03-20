@@ -45,7 +45,7 @@
                     $color = [
                         'pribadi' => 'bg-red-500',
                         'operasional' => 'bg-info-500',
-                        'dinas' => 'bg-gree-500',
+                        'dinas' => 'bg-green-500',
                         'lainnya' => 'bg-black-500',
                     ][$data->type];
                 @endphp
