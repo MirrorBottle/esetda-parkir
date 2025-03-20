@@ -14,6 +14,7 @@
         body {
             font-family: 'Noto Sans', sans-serif;
         }
+
         .custom-green {
             color: #009E3B;
         }
@@ -64,13 +65,17 @@
                     <p class="font-medium text-lg">{{ $data->employee->position }}</p>
                 </div>
                 <div class="mt-2">
+                    <span class="text-gray-800 text">No. Telepon:</span>
+                    <p class="font-medium text-lg">{{ $data->phone_number }}</p>
+                </div>
+                <div class="mt-2">
                     <span class="text-gray-800 text">Unit Kendaraan:</span>
                     <p class="font-medium text-lg">{{ $data->name }}</p>
                 </div>
                 <div class="mt-2">
-                  <span class="text-gray-800 text">Unit Kerja:</span>
-                  <p class="font-medium text-lg">{{ $data->employee->biro->name }}</p>
-              </div>
+                    <span class="text-gray-800 text">Unit Kerja:</span>
+                    <p class="font-medium text-lg">{{ $data->employee->biro->name }}</p>
+                </div>
             </div>
         </div>
     </div>
