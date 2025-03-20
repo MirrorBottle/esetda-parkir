@@ -2,10 +2,10 @@
 
 namespace App\Filament\Auth;
 
+use App\Http\Responses\LoginResponse;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Http\Responses\Auth\LoginResponse;
 use Filament\Pages\Auth\Login as AuthLogin;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\HtmlString;

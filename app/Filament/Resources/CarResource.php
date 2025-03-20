@@ -89,7 +89,7 @@ class CarResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('type')
                     ->badge()
-                    ->colors(['primary' => 'dinas', 'info' => 'operasional', 'success' => 'pribadi', 'warning' => 'lainnya'])
+                    ->colors(['primary' => 'dinas', 'info' => 'operasional', 'danger' => 'pribadi', 'warning' => 'lainnya'])
                     ->sortable()
                     ->label('Tipe'),
             ])
