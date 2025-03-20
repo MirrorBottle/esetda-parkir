@@ -66,7 +66,7 @@
                 </div>
                 <div class="mt-2">
                     <span class="text-gray-800 text">No. Telepon:</span>
-                    <p class="font-medium text-lg">{{ $data->phone_number }}</p>
+                    <p class="font-medium text-lg">{{ $data->employee->phone_number }}</p>
                 </div>
                 <div class="mt-2">
                     <span class="text-gray-800 text">Unit Kendaraan:</span>
