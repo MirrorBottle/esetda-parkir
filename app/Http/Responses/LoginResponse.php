@@ -11,7 +11,7 @@ class LoginResponse extends \Filament\Http\Responses\Auth\LoginResponse
     public function toResponse($request): RedirectResponse|Redirector
     {
       if(auth()->user()->hasRole('admin')){
-        return redirect()->intended(route('admin.dashboard'));
+        return redirect()->intended("/admin/dashboard");
       }
       return redirect()->intended(route('logged-in'));
     }
