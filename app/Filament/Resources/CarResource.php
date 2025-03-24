@@ -110,10 +110,10 @@ class CarResource extends Resource
                     ->color('info')
                     ->action(function (Car $record) {
                         // Check if QR image already exists
-                        if ($record->qr_image !== null) {
+                        // if ($record->qr_image !== null) {
                             // If exists, just download it
-                            return response()->download(Storage::disk('public')->path($record->qr_image));
-                        }
+                            // return response()->download(Storage::disk('public')->path($record->qr_image));
+                        // }
 
                         // Generate QR code with the link
                         $qrData = env("APP_URL") . "/detail-kendaraan/{$record->uuid}";

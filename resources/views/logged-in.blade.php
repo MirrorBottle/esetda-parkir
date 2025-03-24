@@ -28,7 +28,7 @@
           </h1>
           
           <p class="text-gray-600">
-            Anda berhasil login menggunakan sebagai <br> <b>Pengawas Dalam</b>.
+            Anda berhasil login menggunakan sebagai <br> <b>Pengamanan Dalam</b>.
           </p>
         </div>
       </div>
