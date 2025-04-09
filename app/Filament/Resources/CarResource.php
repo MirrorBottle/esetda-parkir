@@ -139,7 +139,10 @@ class CarResource extends Resource
                         );
 
                         // Load the template image
-                        $template = $manager->read(public_path('images/templates.png'));
+                        $template_path = $record->type == "dinas" ?
+                            public_path('images/template_dinas.png') :
+                            public_path('images/template.png');
+                        $template =  $manager->read(public_path($template_path));
 
                         // Load the QR code
                         $qrImage = $manager->read($qrPath);
