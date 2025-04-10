@@ -139,7 +139,7 @@ class CarResource extends Resource
                         );
 
                         // Load the template image
-                        $template_path = $record->type == "dinas" ?
+                        $template_path = in_array($record->type, ["dinas", "operasional"]) ?
                             public_path('images/templates_dinas.png') :
                             public_path('images/templates.png');
                         $template =  $manager->read($template_path);
