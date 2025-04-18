@@ -13,6 +13,7 @@
         "intervention/image-laravel": "^1.5",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "phpoffice/phpspreadsheet": "^4.2",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "tomatophp/filament-users": "^2.0"
     },

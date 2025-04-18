@@ -102,6 +102,12 @@ class CarResource extends Resource
                         'pribadi' => 'Pribadi',
                         'lainnya' => 'Lainnya',
                     ]),
+                Tables\Filters\SelectFilter::make('employee.biro_id')
+                    ->label('Biro')
+                    ->relationship('employee.biro', 'name')
+                    ->columnSpanFull()
+                    ->preload()
+                    ->multiple(),
             ])
             ->actions([
                 Tables\Actions\Action::make('qrImage')

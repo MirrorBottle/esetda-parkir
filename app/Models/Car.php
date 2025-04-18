@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+
 class Car extends Model
 {
 
@@ -21,10 +22,5 @@ class Car extends Model
     public function employee()
     {
         return $this->belongsTo(Employee::class);
-    }
-
-    public function biro()
-    {
-        return $this->belongsToThrough(Biro::class, Employee::class);
     }
 }
