@@ -22,7 +22,7 @@ class ManageCars extends ManageRecords
             Actions\Action::make('export')
                 ->label('Laporan')
                 ->icon('heroicon-o-arrow-down-tray')
-                ->modalHeading('Export Options')
+                ->modalHeading('Laporan Kendaraan')
                 ->modalSubmitActionLabel('Ekspor Laporan')
                 ->form([
                     Select::make('type')
