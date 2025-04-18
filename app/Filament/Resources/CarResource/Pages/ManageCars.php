@@ -87,7 +87,7 @@ class ManageCars extends ManageRecords
                     return response()->streamDownload(function () use ($spreadsheet) {
                         $writer = new Xlsx($spreadsheet);
                         $writer->save('php://output');
-                    }, "sisda-parkir-". now()->format('Y-m-d') .".xlsx"); 
+                    }, "esetda-parkir-". now()->format('Y-m-d') .".xlsx"); 
                 }),
         ];
     }
