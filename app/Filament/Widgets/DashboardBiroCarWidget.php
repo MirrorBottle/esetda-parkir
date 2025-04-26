@@ -28,7 +28,7 @@ class DashboardBiroCarWidget extends BaseWidget
         $carsByType = array_merge($carsByType, $typeCounts);
 
         return [
-            Stat::make('Kendaraan Operasional', $carsByType['operational'])
+            Stat::make('Kendaraan Operasional', $carsByType['operasional'])
                 ->chart([7, 2, 10, 3, 15, 4, 17])
                 ->color('info'),
             Stat::make('Kendaraan Pribadi', $carsByType['pribadi'])
