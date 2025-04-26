@@ -3,12 +3,15 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Auth\Login;
+use App\Filament\Widgets\DashboardBiroCarChartWidget;
+use App\Filament\Widgets\DashboardBiroCarWidget;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
+use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -39,7 +42,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
+                DashboardBiroCarWidget::class,
+                DashboardBiroCarChartWidget::class
             ])
             ->plugin(\TomatoPHP\FilamentUsers\FilamentUsersPlugin::make())
             ->plugin(FilamentShieldPlugin::make())
