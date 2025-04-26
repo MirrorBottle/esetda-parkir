@@ -13,7 +13,7 @@ class DashboardBiroCarWidget extends BaseWidget
 
     protected function getStats(): array
     {
-        $carTypesList = ['dinas', 'operational', 'pribadi', 'lainnya'];
+        $carTypesList = ['dinas', 'operasional', 'pribadi', 'lainnya'];
 
         $carsByType = collect($carTypesList)->mapWithKeys(function ($type) {
             return [$type => 0];
