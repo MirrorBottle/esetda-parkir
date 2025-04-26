@@ -74,12 +74,13 @@ class ManageCars extends ManageRecords
                     foreach ($records as $key => $record) {
                         $sheet->setCellValue('A' . $row, $key + 1);
                         $sheet->setCellValue('B' . $row, $record->employee->biro->name);
-                        $sheet->setCellValue('C' . $row, $record->employee->phone_number);
-                        $sheet->setCellValue('D' . $row, $record->employee->position);
-                        $sheet->setCellValue('E' . $row, $record->plate_number);
-                        $sheet->setCellValue('F' . $row, $record->name);
-                        $sheet->setCellValue('G' . $row, $record->type);
-                        $sheet->getStyle("A$row:G$row")->getBorders()->getAllBorders()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN);
+                        $sheet->setCellValue('C' . $row, $record->employee->name);
+                        $sheet->setCellValue('D' . $row, $record->employee->phone_number);
+                        $sheet->setCellValue('E' . $row, $record->employee->position);
+                        $sheet->setCellValue('F' . $row, $record->plate_number);
+                        $sheet->setCellValue('G' . $row, $record->name);
+                        $sheet->setCellValue('H' . $row, $record->type);
+                        $sheet->getStyle("A$row:H$row")->getBorders()->getAllBorders()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN);
                         $row++;
                     }
 
